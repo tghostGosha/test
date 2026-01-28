@@ -1,7 +1,9 @@
 import { initBurger } from './burger.js';
+import { initForm } from './form.js';
+import { initMap } from './map.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 	initBurger();
-
-	console.log('Страница загружена');
+	initForm();
+	initMap();
 });

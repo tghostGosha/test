@@ -11,12 +11,16 @@
 		/>
 		<title>Avilon Test Site</title>
 		<link rel="stylesheet" href="/src/styles/main.scss" />
+		<script
+			src="https://api-maps.yandex.ru/v3/?apikey=26a4e487-862a-4b16-8e07-0adac0893e19&lang=ru_RU"
+			type="text/javascript"
+		></script>
 	</head>
 	<body>
-		<include file="/src/layouts/header.html"></include>
+		@@include("./src/layouts/header.html")
 		<main>
 			<div class="main__banner">
-				<img src="./src/assets/img/banner.png" alt="баннер" />
+				<img src="./src/assets/img/banner.png" alt="баннер" width='1440' height='584'/>
 				<div class="content">
 					<div class="content__wrapper">
 						<div class="breadcrumbs">
@@ -34,66 +38,127 @@
 				</div>
 				<div class="main__banner-stroke"></div>
 			</div>
-			<div class="container">
-				<div class="main__content">
-					<div class="conditions">
-						<p>
-							Поменяйте свой автомобиль с пробегом
-							<span> на новый TANK</span>
-						</p>
-						<img src="/src/assets/img/car.png" alt="car" />
-					</div>
-					<div class="steps">
-						<div class="steps__card">
-							<img src="/src/assets/svg/diagnostic.svg" alt="diagnostic" />
-							<div class="steps__card-descr">
-								<span class="step-number">01</span>
-								<div class="text">
-									<p>
-										Бесплатная диагностика вашего авто в официальном дилерском
-										центре TANK
-									</p>
-									<span>Надёжность и прозрачность в Авилон</span>
+			<section class="main">
+				<div class="container">
+					<div class="main__content">
+						<div class="conditions">
+							<h2>
+								ПОМЕНЯЙТЕ СВОЙ АВТОМОБИЛЬ С&nbsp;ПРОБЕГОМ
+								<span> НА НОВЫЙ TANK</span>
+							</h2>
+							<img src="/src/assets/img/car.png" alt="car" width='557' height='336'/>
+						</div>
+						<div class="steps">
+							<div class="steps__card first">
+								<img src="/src/assets/svg/diagnostic.svg" alt="diagnostic" />
+								<div class="steps__card-descr">
+									<span class="step-number">01</span>
+									<div class="text">
+										<h3>
+											Бесплатная диагностика вашего авто в официальном дилерском
+											центре TANK
+										</h3>
+										<span>Надёжность и прозрачность в&nbsp;Авилон</span>
+									</div>
+								</div>
+							</div>
+							<div class="steps__card second">
+								<img src="/src/assets/svg/whatsapp.svg" alt="diagnostic" />
+								<div class="steps__card-descr">
+									<span class="step-number">02</span>
+									<div class="text">
+										<h3>
+											Просто пришлите СТС <br />
+											на WhatsApp, и мы оперативно рассчитаем стоимость вашего
+											автомобиля
+										</h3>
+										<span>Быстрая оценка</span>
+									</div>
+								</div>
+							</div>
+							<div class="steps__card third">
+								<img src="/src/assets/svg/exchange.svg" alt="diagnostic" />
+								<div class="steps__card-descr">
+									<span class="step-number">03</span>
+									<div class="text">
+										<h3>Обменяйте старый автомобиль на&nbsp;новый TANK</h3>
+										<span
+											>Дополнительная выгода по&nbsp;программе трейд-ин</span
+										>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="steps__card">
-							<img src="/src/assets/svg/whatsapp.svg" alt="diagnostic" />
-							<div class="steps__card-descr">
-								<span class="step-number">02</span>
-								<div class="text">
-									<p>
-										Просто пришлите СТС <br />
-										на WhatsApp, и мы оперативно рассчитаем стоимость вашего
-										автомобиля
-									</p>
-									<span>Быстрая оценка</span>
-								</div>
-							</div>
-						</div>
-						<div class="steps__card">
-							<img src="/src/assets/svg/exchange.svg" alt="diagnostic" />
-							<div class="steps__card-descr">
-								<span class="step-number">03</span>
-								<div class="text">
-									<p>Обменяйте старый автомобиль на новый TANK</p>
-									<span>Дополнительная выгода по программе трейд-ин</span>
-								</div>
-							</div>
-						</div>
-					</div>
 
-					<form action=""></form>
-					<p>
-						Автомобили TANK — это не просто транспорт, а надежные партнеры,
-						готовые к любым вызовам
-					</p>
+						<form id="contactForm" novalidate>
+							<div class="form-group">
+								<label for="name"></label>
+								<input
+									type="text"
+									id="name"
+									name="name"
+									placeholder="Ваше имя"
+									required
+									minlength="2"
+								/>
+								<span class="error" id="nameError"></span>
+							</div>
+
+							<div class="form-group">
+								<label for="phone"></label>
+								<input
+									type="tel"
+									id="phone"
+									name="phone"
+									placeholder="+7 (XXX) XXX-XX-XX"
+									required
+								/>
+								<span class="error" id="phoneError"></span>
+							</div>
+
+							<div class="checkbox-wrapper">
+								<input
+									type="checkbox"
+									id="agreement"
+									name="agreement"
+									required
+								/>
+								<label for="agreement">
+									Согласие на <a href="#">обработку персональных данных</a>
+								</label>
+								<span class="error checkbox-error" id="agreementError"></span>
+							</div>
+
+							<button type="submit" id="submitBtn" class="primary-button">
+								ОСТАВИТЬ НОМЕР ТЕЛЕФОНА ДЛЯ ОЦЕНКИ
+							</button>
+						</form>
+						<dialog id="successModal">
+							<img src="/src/assets/svg/diagnostic.svg" alt="diagnostic" />
+							<h2>Спасибо!</h2>
+							<p>Ваша заявка успешно отправлена</p>
+						</dialog>
+						<p class="conclusion">
+							<span>АВТОМОБИЛИ TANK — ЭТО НЕ ПРОСТО ТРАНСПОРТ, </span>
+							А НАДЕЖНЫЕ ПАРТНЕРЫ, ГОТОВЫЕ К ЛЮБЫМ ВЫЗОВАМ
+						</p>
+					</div>
 				</div>
-			</div>
+			</section>
+
+			<section class="map-section" id="map-section">
+				@@include("./src/layouts/adress-card.html")
+				<div class="map-wrapper">
+					<div id="ymap" class="ymap"></div>
+				</div>
+			</section>
 		</main>
 
-		<footer></footer>
-
+		@@include("./src/layouts/footer.html")
+		<script
+			src="https://api-maps.yandex.ru/v3/?apikey=26a4e487-862a-4b16-8e07-0adac0893e19lang=ru_RU"
+			type="text/javascript"
+		></script>
 		<script type="module" defer src="/src/js/main.js"></script>
 	</body>
 </html>

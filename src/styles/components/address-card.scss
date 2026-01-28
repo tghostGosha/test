@@ -1,0 +1,52 @@
+@use '../variables.scss' as *;
+@use '../breakpoints' as bp;
+
+.address-card {
+	position: absolute;
+	top: 32px;
+	left: 88px;
+	background-color: #222222;
+	padding: 24px;
+	z-index: 3;
+	border-radius: 8px;
+	@include bp.tablet-1024 {
+		top: 16px;
+		left: 16px;
+	}
+	@include bp.tablet-768 {
+		position: static !important;
+	}
+	& .socials {
+		margin-top: 39px;
+		gap: 13px;
+	}
+	img {
+		max-width: 468px;
+		max-height: 270px;
+		border-radius: 8px;
+		overflow: hidden;
+		margin-bottom: 16px;
+		@include bp.tablet-768 {
+			max-width: 100%;
+		}
+	}
+	.info-item {
+		display: flex;
+		align-items: center;
+		gap: 9.33px;
+		color: $white;
+		margin-bottom: 5px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+		a {
+			color: $orange;
+			font-size: 14px;
+		}
+		& svg {
+			color: $orange;
+			flex: 0 0 16px;
+		}
+	}
+}

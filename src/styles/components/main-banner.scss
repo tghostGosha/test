@@ -1,7 +1,6 @@
 @use '../variables.scss' as *;
 @use '../breakpoints' as bp;
 .main__banner {
-	// max-width: 1442px;
 	max-height: 596px;
 	position: relative;
 	display: flex;
@@ -28,10 +27,10 @@
 		&__wrapper {
 			max-width: 1200px;
 			margin: 0 auto;
-			padding: 24px;
+			padding: 18px 24px 24px 24px;
 			display: flex;
 			flex-direction: column;
-			gap: 50px;
+			gap: 47px;
 			align-items: flex-start;
 		}
 		.breadcrumbs {
@@ -45,6 +44,8 @@
 			display: flex;
 
 			li a {
+				font-size: 12px;
+				font-weight: 500;
 				color: $white;
 				opacity: 0.8;
 			}
@@ -55,6 +56,7 @@
 			font-weight: 500;
 			font-size: clamp(2.0625rem, -0.2946rem + 4.9107vw, 4.125rem);
 			line-height: clamp(2.375rem, -0.8393rem + 6.6964vw, 5.1875rem);
+			letter-spacing: 0.9px;
 		}
 	}
 	&-stroke {

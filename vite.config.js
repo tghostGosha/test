@@ -1,9 +1,15 @@
 import svgSprite from '@pivanov/vite-plugin-svg-sprite';
 import { defineConfig } from 'vite';
 import { imagetools } from 'vite-imagetools';
-import htmlInclude from 'vite-plugin-html-include';
+import path from 'path'
 
+import fileInclude from 'vite-file-include'
 export default defineConfig({
+	resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
 	plugins: [
 		svgSprite({
 			iconDirs: ['src/assets/svg'],
@@ -12,10 +18,9 @@ export default defineConfig({
 			svgo: true,
 			fileName: 'sprite.svg',
 		}),
-		htmlInclude({
-			root: './src',
-			includePaths: ['src/layouts'],
-		}),
+		fileInclude({
+    
+    }),
 		imagetools({
 			defaultDirectives: () =>
 				new URLSearchParams({

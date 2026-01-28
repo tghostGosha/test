@@ -1,16 +1,27 @@
 @use './variables.scss' as *;
-@use './breakpoints.scss' as *;
+@use './breakpoints.scss' as bp;
+@use './components/buttons.scss' as *;
+@use './components/socials.scss' as *;
 @use './components/header.scss' as *;
+@use './components/footer.scss' as *;
 @use './components/main-banner.scss' as *;
 @use './components/main-content.scss' as *;
+@use './components/form.scss' as *;
+@use './components/map.scss' as *;
+@use './components/address-card.scss' as *;
+
 :root {
-	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: system-ui, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+main {
+	width: 100vw;
+	overflow-x: hidden;
 }
 ul {
 	list-style: none;
@@ -30,6 +41,7 @@ img {
 	object-fit: cover;
 }
 body {
+	// font-family: Oswald;
 	margin: 0;
 	display: flex;
 	flex-direction: column;
@@ -37,13 +49,14 @@ body {
 	min-width: 320px;
 	min-height: 100vh;
 	background-color: $background-color;
+	color: $white;
+	overflow-x: hidden;
 }
 
-h1 {
-	font-family: $font-abhaya-extrabold;
-	font-weight: 800;
-	font-size: 3.2em;
-	line-height: 1.1;
+h1,h2,h3
+p {
+	padding: 0;
+	margin: 0;
 }
 
 .container {
@@ -51,4 +64,7 @@ h1 {
 	margin: 0 auto;
 	padding: 0 89px;
 	text-align: center;
+	@include bp.tablet-1024 {
+		padding: 0 16px;
+	}
 }
