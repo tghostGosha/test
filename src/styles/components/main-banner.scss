@@ -1,0 +1,65 @@
+@use '../variables.scss' as *;
+@use '../breakpoints' as bp;
+.main__banner {
+	// max-width: 1442px;
+	max-height: 596px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	img {
+		width: 100vw;
+		height: 584px;
+		object-fit: cover;
+		object-position: center center;
+		@include bp.tablet-1024 {
+			height: 350px;
+		}
+		@include bp.tablet-768 {
+			height: 200px;
+		}
+	}
+	.content {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		@include bp.tablet-768 {
+			position: static;
+		}
+		&__wrapper {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 24px;
+			display: flex;
+			flex-direction: column;
+			gap: 50px;
+			align-items: flex-start;
+		}
+		.breadcrumbs {
+			@include bp.tablet-768 {
+				position: absolute;
+				top: 0;
+				padding: 24px 0px 17px 0px;
+			}
+		}
+		.breadcrumbs ul {
+			display: flex;
+
+			li a {
+				color: $white;
+				opacity: 0.8;
+			}
+		}
+
+		h1 {
+			color: $white;
+			font-weight: 500;
+			font-size: clamp(2.0625rem, -0.2946rem + 4.9107vw, 4.125rem);
+			line-height: clamp(2.375rem, -0.8393rem + 6.6964vw, 5.1875rem);
+		}
+	}
+	&-stroke {
+		width: 100%;
+		height: 12px;
+		background-color: $orange;
+	}
+}

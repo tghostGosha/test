@@ -1,17 +1,20 @@
-import svgSprite from '@pivanov/vite-plugin-svg-sprite'; // ← новый импорт
+import svgSprite from '@pivanov/vite-plugin-svg-sprite';
 import { defineConfig } from 'vite';
 import { imagetools } from 'vite-imagetools';
+import htmlInclude from 'vite-plugin-html-include';
 
 export default defineConfig({
 	plugins: [
 		svgSprite({
-			// Основные настройки (аналогично тому, что было)
-			iconDirs: ['src/assets/svg'], // папка с твоими SVG (без /**/*.svg, просто директория)
-			symbolId: 'icon-[name]', // ID для <use xlink:href="#icon-name">
-			inject: 'body-last', // куда вставить <svg> спрайт (body-last — в конец body)
-			svgo: true, // включить оптимизацию SVGO (по умолчанию true)
-			// fileName: 'sprite.svg',             // если хочешь отдельный файл вместо инъекции
-			// outputDir: 'public',                // если fileName задан
+			iconDirs: ['src/assets/svg'],
+			symbolId: 'icon-[name]',
+			inject: 'body-last',
+			svgo: true,
+			fileName: 'sprite.svg',
+		}),
+		htmlInclude({
+			root: './src',
+			includePaths: ['src/layouts'],
 		}),
 		imagetools({
 			defaultDirectives: () =>

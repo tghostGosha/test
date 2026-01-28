@@ -1,0 +1,75 @@
+@use '../variables.scss' as *;
+@use '../breakpoints' as bp;
+
+.main__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 100px 0 44px 0;
+	.conditions {
+		display: flex;
+		gap: 92px;
+		margin-bottom: 100px;
+		p {
+			max-width: 364px;
+			font-size: 40px;
+			line-height: 56px;
+			font-weight: 800;
+			color: $white;
+			text-align: left;
+			span {
+				color: $orange;
+				display: inline-block;
+			}
+		}
+		img {
+			max-width: 592px;
+		}
+	}
+	.steps {
+		display: flex;
+		flex-wrap: wrap;
+		flex: 1 1 auto;
+		max-width: 1048px;
+		// grid-template-columns: repeat(14, 1fr);
+		row-gap: 100px;
+		column-gap: 16px;
+		justify-content: center;
+
+		&__card {
+			// grid-column: span 7;
+			width: 100%;
+			max-width: 516px;
+			// &:last-child:nth-child(odd) {
+			// 	margin: 0 auto;
+			// 	grid-column: 5 / span 6; // сдвигаем на центр (примерно)
+			// }
+			img {
+				max-width: fit-content;
+				max-height: 148px;
+				margin-bottom: 48px;
+			}
+			&-descr {
+				display: flex;
+				gap: 32px;
+				.step-number {
+					flex: 0;
+					font-size: 64px;
+					font-weight: 700;
+					color: $orange;
+				}
+				& .text {
+					color: $white;
+					text-align: left;
+					p {
+						font-weight: 500;
+						margin-bottom: 16px;
+					}
+					span {
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+}

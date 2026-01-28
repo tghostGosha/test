@@ -1,0 +1,46 @@
+@use 'sass:map';
+$breakpoints: (
+	'mobile-320': 320px,
+	'mobile-430': 430px,
+	'tablet-768': 768px,
+	'tablet-1024': 1024px,
+	'desktop-1440': 1440px,
+	'desktop-1920': 1920px,
+);
+
+// Миксины для max-width (стили до этой ширины включительно)
+@mixin mobile-320 {
+	@media (max-width: map.get($breakpoints, 'mobile-320')) {
+		@content;
+	}
+}
+
+@mixin mobile-430 {
+	@media (max-width: map.get($breakpoints, 'mobile-430')) {
+		@content;
+	}
+}
+
+@mixin tablet-768 {
+	@media (max-width: map.get($breakpoints, 'tablet-768')) {
+		@content;
+	}
+}
+
+@mixin tablet-1024 {
+	@media (max-width: map.get($breakpoints, 'tablet-1024')) {
+		@content;
+	}
+}
+
+@mixin desktop-1440 {
+	@media (max-width: map.get($breakpoints, 'desktop-1440')) {
+		@content;
+	}
+}
+
+@mixin desktop-1920 {
+	@media (max-width: map.get($breakpoints, 'desktop-1920')) {
+		@content;
+	}
+}

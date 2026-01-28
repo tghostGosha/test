@@ -13,21 +13,87 @@
 		<link rel="stylesheet" href="/src/styles/main.scss" />
 	</head>
 	<body>
-		<div id="app">
-			<div class="container">
-				<header>
-					<a href="https://vite.dev" target="_blank">
-						<img src="/vite.svg" class="logo" alt="Vite logo" />
-					</a>
-					<h1>Header</h1>
-				</header>
-
-				<main></main>
-
-				<footer></footer>
+		<include file="/src/layouts/header.html"></include>
+		<main>
+			<div class="main__banner">
+				<img src="./src/assets/img/banner.png" alt="баннер" />
+				<div class="content">
+					<div class="content__wrapper">
+						<div class="breadcrumbs">
+							<ul>
+								<li>
+									<a href="#">Главная ></a>
+								</li>
+								<li>
+									<a href="#">Tank Trade-in</a>
+								</li>
+							</ul>
+						</div>
+						<h1>TANK Trade-in</h1>
+					</div>
+				</div>
+				<div class="main__banner-stroke"></div>
 			</div>
-		</div>
+			<div class="container">
+				<div class="main__content">
+					<div class="conditions">
+						<p>
+							Поменяйте свой автомобиль с пробегом
+							<span> на новый TANK</span>
+						</p>
+						<img src="/src/assets/img/car.png" alt="car" />
+					</div>
+					<div class="steps">
+						<div class="steps__card">
+							<img src="/src/assets/svg/diagnostic.svg" alt="diagnostic" />
+							<div class="steps__card-descr">
+								<span class="step-number">01</span>
+								<div class="text">
+									<p>
+										Бесплатная диагностика вашего авто в официальном дилерском
+										центре TANK
+									</p>
+									<span>Надёжность и прозрачность в Авилон</span>
+								</div>
+							</div>
+						</div>
+						<div class="steps__card">
+							<img src="/src/assets/svg/whatsapp.svg" alt="diagnostic" />
+							<div class="steps__card-descr">
+								<span class="step-number">02</span>
+								<div class="text">
+									<p>
+										Просто пришлите СТС <br />
+										на WhatsApp, и мы оперативно рассчитаем стоимость вашего
+										автомобиля
+									</p>
+									<span>Быстрая оценка</span>
+								</div>
+							</div>
+						</div>
+						<div class="steps__card">
+							<img src="/src/assets/svg/exchange.svg" alt="diagnostic" />
+							<div class="steps__card-descr">
+								<span class="step-number">03</span>
+								<div class="text">
+									<p>Обменяйте старый автомобиль на новый TANK</p>
+									<span>Дополнительная выгода по программе трейд-ин</span>
+								</div>
+							</div>
+						</div>
+					</div>
 
-		<script type="module" src="/main.js"></script>
+					<form action=""></form>
+					<p>
+						Автомобили TANK — это не просто транспорт, а надежные партнеры,
+						готовые к любым вызовам
+					</p>
+				</div>
+			</div>
+		</main>
+
+		<footer></footer>
+
+		<script type="module" defer src="/src/js/main.js"></script>
 	</body>
 </html>
