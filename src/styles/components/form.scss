@@ -4,7 +4,7 @@
 form {
 	width: 100%;
 	max-width: 440px;
-	margin-bottom: 107px;
+	margin-bottom: 68px;
 }
 
 .form-group {
@@ -17,14 +17,15 @@ form {
 input[type='text'],
 input[type='tel'] {
 	width: 100%;
-	max-width: 392px;
-	height: 23px;
+	// max-width: 392px;
+	height: 48px;
 	padding: 12px 23px;
 	border: 1px solid $orange;
 	border-radius: 8px;
 	font-size: 16px;
 	transition: all 0.2s;
 	opacity: 0.8;
+	box-sizing: border-box;
 }
 
 input[type='text']:focus,
@@ -34,7 +35,10 @@ input[type='tel']:focus {
 	border-color: var(--accent);
 	box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.12);
 }
-
+input::placeholder {
+	color: #222222;
+	opacity: 0.2;
+}
 .checkbox-wrapper {
 	display: flex;
 	align-items: center;
@@ -48,6 +52,8 @@ input[type='tel']:focus {
 	}
 	a {
 		color: $orange;
+		text-decoration: underline;
+		text-underline-offset: 1.5px;
 	}
 }
 
@@ -73,7 +79,7 @@ input[type='checkbox']:checked::after {
 	position: absolute;
 	inset: 0;
 	color: $orange;
-	font-size: 16px;
+	font-size: 9px;
 	font-weight: bold;
 	display: grid;
 	place-items: center;

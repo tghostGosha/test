@@ -3,9 +3,14 @@
 
 .header {
 	width: 100%;
-
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000; 
+	background-color: #181818CC;
 	&__container {
-		max-width: 1263px;
+		max-width: 1286px;
 		padding: 0 12px;
 		margin: 0 auto;
 	}
@@ -70,7 +75,7 @@
 				transition: all 0.2s ease-in;
 			}
 			.phone {
-				color: $orange;
+				color: $white;
 
 				svg {
 					color: $orange;
@@ -85,7 +90,7 @@
 					}
 				}
 				&:hover {
-					color: $white;
+					color: $orange;
 				}
 			}
 
@@ -209,6 +214,14 @@
 					transition: all 0.3s ease-in;
 					&:hover {
 						opacity: 1;
+					}
+					
+				}
+				&.active {
+					color: $orange;
+					opacity: 1;
+					&:hover {
+						color: $white;
 					}
 				}
 				span {

@@ -5,14 +5,19 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 100px 0 44px 0;
+	padding: 100px 0 0 0;
 	.conditions {
 		display: flex;
 		gap: 108px;
-		margin-bottom: 111px;
+		margin-bottom: 84px;
 		width: 83%;
 		@include bp.tablet-1024 {
 			flex-direction: column;
+		}
+		@include bp.mobile-430 {
+			width: 100%;
+			gap: 24px;
+			margin-bottom: 56px;
 		}
 		h2 {
 			max-width: 364px;
@@ -25,14 +30,22 @@
 			@include bp.tablet-1024 {
 				max-width: 100%;
 			}
+			@include bp.mobile-430 {
+				font-size: 24px;
+				line-height: 28px;
+			}
 			span {
 				color: $orange;
 				display: inline-block;
 			}
 		}
 		img {
-			max-width: 559px;
-			padding-top: 9px;
+			max-width: 562px;
+			object-fit: contain;
+			@include bp.tablet-1024 {
+				margin: 0 auto;
+				
+			}
 		}
 	}
 	.steps {
@@ -46,6 +59,7 @@
 		justify-content: center;
 		@include bp.tablet-768 {
 			margin-bottom: 60px;
+			row-gap: 56px;
 		}
 		&__card {
 			width: 100%;
@@ -53,7 +67,11 @@
 			img {
 				max-width: fit-content;
 				max-height: 148px;
-				margin-bottom: 32px;
+				margin-bottom: 8px;
+				@include bp.mobile-430 {
+					max-height: 82px;
+					object-fit: contain;
+				}
 			}
 			&-descr {
 				display: flex;
@@ -67,13 +85,14 @@
 					font-size: 64px;
 					font-weight: 700;
 					color: $orange;
+					padding-top: 23px;
 				}
 				& .text {
 					color: $white;
 					text-align: left;
 					@include bp.tablet-768 {
-							text-align: center;
-						}
+						text-align: center;
+					}
 					h3 {
 						font-weight: 500;
 						font-size: 24px;
@@ -123,7 +142,7 @@
 					margin-left: 0;
 				}
 				img {
-					margin-bottom: 24px;
+					margin-bottom: 0;
 					padding-right: 55px;
 					@include bp.tablet-768 {
 						padding: 0;

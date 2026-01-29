@@ -9,7 +9,11 @@
 @use './components/form.scss' as *;
 @use './components/map.scss' as *;
 @use './components/address-card.scss' as *;
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 :root {
 	font-family: system-ui, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
@@ -51,6 +55,10 @@ body {
 	background-color: $background-color;
 	color: $white;
 	overflow-x: hidden;
+	padding-top: 100px;
+	@include bp.tablet-1024  {
+		padding-top: 73px;
+	}
 }
 
 h1,h2,h3
